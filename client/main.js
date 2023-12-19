@@ -13,7 +13,7 @@ let total = 0;
 function createItem(value) {
   const template = `
   <tr>
-    <td>${count++}</td>
+    <td>${++count}</td>
     <td>${value}</td>
     <td>${total+= value}</td>
   </tr>
@@ -23,9 +23,7 @@ function createItem(value) {
 
 function renderRecordItem() {
   const diceValue = getNode('#cube').dataset.dice / 1;
-  console.log(getNode('#cube'));
-  console.log(diceValue);
-  insertLast('.recordList tbody', template);
+  insertLast('.recordList tbody', createItem(diceValue));                
 }
 
 function handleRecord() {
